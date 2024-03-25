@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/search-1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/admin/dashboard"><img class="backbutton" src="/images/back.png"  width="30" height="30"></a> 
+
+
+        <div class="row-container">
+            <h2 class="heading"> USERS</h2>
+            <div class="button-group">
+              
+                <button class="toggleButton" data-name="1">SHOW</button>
+                
+            </div>
+            <div class="toggleBtn"><!-- toggle button -->
+                
+            </div>
+        </div>
+        
+        <div class="confirmWait" data-target="1">
+           
+                
+            <div class="confirmTable table-responsive"> <!-- confirm table starts -->
+               
+                <table class="table table-success table-striped table-responsive" style="display: block;"  >
+                
+                    <thead>
+                        <tr>
+                        <th style="width: 5%;" scope="col">SERIAL NO</th>
+                        
+                        <th style="width: 14%;"scope="col">USER NAME</th>
+                        
+                        <th style="width: 18%;"scope="col">NAME</th>
+                        <th style="width: 18%;"scope="col">EMAIL</th>
+                        <th style="width: 18%;"scope="col">GENDER</th>
+                        <th style="width: 13%;"scope="col">DATE OF BIRTH</th>
+                        <th style="width: 20%;"scope="col">PHONE</th>
+                        
+                        <th style="width: 10%;"scope="col">PROFILE</th>
+                        <th style="width: 10%;"scope="col">DELETE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% users.forEach((users,index) => { %>
+                            <tr>
+                            <th scope="row"><%= index + 1 %></th>
+                            
+                            <td><%= users.username %></td>
+                            <td><%= users.first_name +' '+ users.last_name %></td>
+                            <td><%= users.email %></td>
+                            <td><%= users.gender %></td>
+                            <td><%= users.date_of_birth %></td>
+                            <td><%= users.phone %></td>
+                            <td><form action="/admin/usersprofile" method="post">
+                                <input type="hidden" name="username" value="<%= users.username %>">
+                                <button name="profile" type="submit">profile</button></form></td>
+                            
+                            
+                            <td><form id="deleteuser" class="delbtn" action="/admin/delete-users" method="post">
+                                <input type="hidden" name="username" value="<%= users.username %>">
+                                <button type="delete"><img src="/images/rubbish.png"></button>
+                            </form></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                    </div>
+
+            
+                  
+
+
+    <script src="/javascripts/se.js"></script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+</head>
+<body>
+
+<div class="profileSearchBar">
+<a href="/admin/users"><img class="backbutton" src="/images/back.png"  width="30" height="30"></a> 
+
+
+</div><!-- end of profileSearchBar -->
+
+<div class="profileBody">
+
+<!-- profilr bts -->
+<div class="idProfile">
+<div class="container mt-2 mb-6 p-5 d-flex justify-content-center">
+<div class="card p-4">
+<div class=" image d-flex flex-column justify-content-center align-items-center">
+<button class="btn btn-secondary">
+<img src="<%= userProfile.profilephoto || '/images/man.png' %>" alt="Profile Photo"height="100" width="100" />
+</button>
+
+<span class="name mt-3"><%= userProfile.first_name +' ' + userProfile.last_name %></span>
+<span class="idd">@<%= userProfile.username %></span>
+<div class="d-flex flex-row justify-content-center align-items-center gap-2">
+<span class="idd1"><%= userProfile.email %></span>
+<span><i class="fa fa-copy"></i></span>
+
+</div>
+<div class="d-flex flex-row justify-content-center align-items-center mt-3"></span>
+</div> 
+<div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+
+    </div> </div> </div>
+<!-- end of profile -->
+
+</div><!-- end of idProfile -->
+<div class="profile-container">
+    
+    <h2>User Profile</h2>
+    <p><strong>Username: <%= userProfile.username %></strong> <span id="username"></span></p>
+    <p><strong>Name: <%= userProfile.first_name +' ' + userProfile.last_name %></strong> <span id="gender"></span></p>
+    <p><strong>Gender: <%= userProfile.gender %></strong> <span id="gender"></span></p>
+    <p><strong>Phone Number: <%= userProfile.phone %></strong> <span id="phoneNumber"></span></p>
+    <p><strong>Email: <%= userProfile.email %></strong> <span id="email"></span></p>
+    
+</div><!-- end of profileContainer -->
+
+
+
+
+</div><!-- end of profileBody -->
+
+
+
+
+
+    
+</div>
+<script src="/javascripts/se.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/search-1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>postedjobs</title>
+</head>
+<body>
+    <a href="/profile"><img class="backbutton" src="/images/back.png"  width="30" height="30"></a>
+    <% if (jobsList.length === 0) { %>
+        <h6 style="text-align: center;">You haven't posted any jobs</h6>
+    <% } else { %> 
+    <% jobsList.forEach(job => { %>  
+        <div class="row-container">
+           
+                <h3>Job Title: <%= job.job %></h3>
+            <h2 class="heading"></h2>
+            <div class="button-group">
+                <form action="delete-job" method="post">
+                    <input type="hidden" name="jobid" value="<%= job.job_id %>">
+                <button class="delete-button">Delete</button></form>
+                <button class="toggleButton" >SHOW</button>
+                
+            </div>
+            <div class="toggleBtn"><!-- toggle button -->
+                
+            </div>
+        </div>
+        
+        <div class="confirmWait" >
+            
+                
+            <div class="confirmTable table-responsive"> <!-- confirm table starts -->
+                <h1>APPLICATIONS</h1>
+                
+                <table class="table table-success table-striped"  >
+                
+                    <thead>
+                        <tr>
+                        <th style="width: 5%;" scope="col">SERIAL NO</th>
+                        <th style="width: 10%;"scope="col">NAME</th>
+                        <th style="width: 10%;"scope="col">USER NAME</th>
+                        <th style="width: 10%;"scope="col">MOB NO</th>
+                        <th style="width: 15%;"scope="col">E-MAIL ID</th>
+                        <th style="width: 15%;"scope="col">STATUS</th>
+                        <th style="width: 5%;"scope="col">DETAILS</th>
+                        <th style="width: 5%;"scope="col">DELETE</th>
+                        <th style="width: 5%;"scope="col">ACCEPT</th>
+                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% job.applications.forEach((application,index) => { %>
+                            
+                            <tr>
+                                
+                                
+                                <td><%= index + 1 %></td>
+                                <td><%= application.first_name %></td>
+                                <td><%= application.user_name %></td>
+                                <td><%= application.phone %></td>
+                                <td><%= application.email %></td>
+                                <td><%= application.status %></td>
+                                <td><form action="/userprofile" method="post">
+                                    <input type="hidden" name="username" value="<%= application.user_name %>">                                    
+                                    <button class="options" name="profile" type="submit">PROFILE</button>
+                                </form>
+                                </td>
+                                <td><form action="/delete-user" method="post">
+                                    <input type="hidden" name="jobid" value="<%= job.job_id %>">
+                                    <input type="hidden" name="username" value="<%= application.user_name %>">
+                                    <button id="del" class="options" type="submit">DELETE</button></form></td>
+                                <td><form action="/accept-user" method="post"> 
+                                    <input type="hidden" name="jobid" value="<%= job.job_id %>">
+                                    <input type="hidden" name="username" value="<%= application.user_name %>">
+                                    <input type="hidden" name="email" value="<%= application.email %>">
+                                    <button class="options" type ="submit">ACCEPT</button></form></td>
+                            
+                            </tr>
+                    
+                        <% }); %>
+                    </tbody>
+                    </table>
+                
+                
+                    </div>
+                    
+        </div>
+        <% }); %>
+        <% } %>
+    <!-- Display a message or handle the case where jobList is empty -->
+    
+
+    <script src="/javascripts/se.js"></script>
+</body>
+</html>

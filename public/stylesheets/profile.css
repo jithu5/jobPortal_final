@@ -1,0 +1,404 @@
+body{
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+.prof_head{
+    width:100%;
+    height: 5vw;
+    background-color:#FF5841;
+    
+}
+.backbutton{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+    
+}
+.ri-arrow-left-fill{
+    float: left;
+    margin: 0 1.2vw;
+    font-size: 3vw;
+    font-weight: 600;
+    color: #000;
+}
+.ri-arrow-left-fill:hover{
+    color: #568381;
+}
+.gjob{
+    position:relative;
+    width:fit-content;
+    background-color: #568381;
+    border: none;
+    color:aliceblue;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2vw;
+    font-weight: 700;
+    padding: .2rem .4rem;
+    border-radius: 10px;
+    transition: 0.4s;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2),
+    0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.g-job{
+    position:relative;
+    width:fit-content;
+    background-color:rgb(144, 144, 192);
+    border: none;
+    color:aliceblue;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2vw;
+    font-weight: 700;
+    padding: .2rem .4rem;
+    border-radius: 20px;
+    transition: 0.4s;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2),
+    0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.gjob:hover{
+    background-color: aliceblue;
+    color:darkblue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
+    0 17px 50px 0 rgba(0,0,0,0.19);
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+.g-job:hover{
+    background-color: aliceblue;
+    color:darkblue;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),
+    0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.profile-header{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-right: -18vw;
+    font-size: 2vw;
+    font-weight: 700;
+}
+
+.profile_body{
+    background-color: #000;
+    width: 100%;
+    display: flex;
+    position: relative;
+    margin: 0;
+    z-index: 2;
+}
+.r
+
+{
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-color: #000
+}
+
+.card {
+    width: 350px;
+    background-color: #efefef;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.image img {
+    transition: all 0.5s
+}
+
+.card:hover .image img {
+    transform: scale(1.5)
+}
+
+.btn {
+    display: flex;
+    justify-content: space-evenly;
+    width:fit-content;
+    align-items: center;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.idd {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.idd1 {
+    font-size: 12px
+}
+
+.number {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.follow {
+    font-size: 12px;
+    font-weight: 500;
+    color: #444444
+}
+
+.btn1 {
+    height: 40px;
+    width: 150px;
+    border: none;
+    background-color: #000;
+    color: #aeaeae;
+    font-size: 15px
+}
+
+.text span {
+    font-size: 13px;
+    color: #545454;
+    font-weight: 500
+}
+
+.icons i {
+    font-size: 19px
+}
+
+hr .new1 {
+    border: 1px solid
+}
+
+.join {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-weight: bold
+}
+
+.date {
+    background-color: #ccc
+}
+.fileUploadSubmit{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2vw;
+}
+.fileUploadSubmit button {
+    background-color: #3498db; /* Blue color */
+    color: #fff; /* Text color */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Focus effect */
+.fileUploadSubmit button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7); /* Light blue shadow on focus */
+}
+
+/* Hover effect */
+.fileUploadSubmit button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Click effect */
+.fileUploadSubmit button:active {
+    background-color: #1f618d; /* Even darker blue on click */
+}
+ /* Focus effect */
+.fileUploadSubmit button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7); /* Light blue shadow on focus */
+}
+ /* Blur effect */
+.fileUploadSubmit button:blur {
+    outline: none;
+    margin-bottom: 2rem;
+    box-shadow: none; /* Remove box shadow on blur */
+}
+.prefH4, .pref1H4, .pref2H4{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.editDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.edit{
+    margin-left: 20px;
+    background-color: #1f7d78;
+    color: white;
+    font-size: 1rem;
+    padding: .3vw .7vw;
+    border-radius: 5px;
+    display: block;
+}
+.buttonSubmitCancel{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 25px;
+}
+.editInput{
+    z-index: 1000;
+    width: 50vw;
+    position: absolute;
+    margin-top: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.container2 {
+    width: fit-content;
+    background-color: #1f7d78;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+}
+#inputBox1, #inputBox2{
+    display: none;
+    margin-top: 5px;
+}
+
+  /* Style the input box */
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Style the buttons */
+  button {
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+.addNew{
+    background-color: #4c4caf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+  /* Style the submit button differently */
+  .submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* Style the cancel button differently */
+  .cancel-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+
+/* Input styles */
+        .fileUploadSubmit input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #419a96; /* Blue-green color */
+            border-radius: 5px;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+    input[type="file"] {
+            background-color: #419a96;
+            color: white;
+        }
+        input[type="file"]:focus {
+            background-color: #298b88; /* Darker blue-green color on focus */
+        }
+        input[type="file"]:hover {
+            background-color: #298b88; /* Darker blue-green color on hover */
+        }
+        input[type="file"]:active {
+            background-color: #1f7d78; /* Even darker blue-green on click */
+        }
+        input[type="file"]:blur{
+            background-color: #419a96; /* Blue-green color on blur */
+        }
+.profileSearchBar{
+    height: 70px;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-container {
+    position: absolute;
+    width:30vw;
+    border: 1px solid #ddd;
+    height: min-content;
+    padding:2vw 5vw;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    z-index: -1;
+  }
+  .profile-container h2{
+    text-align: center;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  p {
+    margin: 0;
+  }
+  .profileBody{
+    width: 100%;
+    max-height: 60%;
+   
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+  }
+  .idProfile{
+    display: flex;
+    justify-content: center;
+    margin-top: 35vw;
+    position: absolute;
+    z-index: 5;
+  }
+  .container{
+    left: 2vw;
+    width: 30vw;
+  }
+  .custom-box-shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+@media (max-width:1130px) {
+    .profileBody{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 30vh;
+    }
+}
+  

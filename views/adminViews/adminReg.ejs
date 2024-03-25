@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    
+
+    
+
+    <section class="container">
+        <header>Register</header>
+        <form id="registerForm" action="/admin/register" method="post" class="form">
+        
+                <div class="input-box">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required="">
+                </div>
+            <div class="input-box">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required="">
+            </div>
+            <div class="input-box">
+                <label for="password">Password</label>
+                <input type="password" name="pwd" id="pwd" required="">
+            </div>
+            <div class="input-box">
+                <label for="confirmpwd">Confirm Password</label>
+                <input type="password" name="confirmpwd" id="confirm" required="">
+            </div>
+            <button type="submit" class="login-button">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                SUBMIT</button>
+            </section>
+            </form>
+        </body>
+        <section class="links">
+            <div class="jobscorner">
+                <h1  class="jobscorner">JOBS<span>CORNER</span></h1>
+            </div>
+            <p style="left: 20px;"><a href="/admin/adminLogin">Login as Admin</a></p>
+            <div class="regm" id="registerMessage"></div>
+        </section>
+        <script>
+            $(document).ready(function () {
+                $('#registerForm').submit(function (e) {
+                e.preventDefault();
+                $.post($(this).attr('action'), $(this).serialize())
+                    .done(function (data) {
+                      // Successful login, redirect or handle as needed
+                    $('#registerMessage').html('registration successfull...Login to continue')
+                    })
+                    .fail(function (xhr) {
+                    if (xhr.status === 400) {
+                        // Handle specific 400 Bad Request condition
+                        $('#registerMessage').html(xhr.responseJSON.error);
+                    } else if (xhr.status === 401) {
+                        // Handle specific 401 Unauthorized condition
+                        $('#registerMessage').html(xhr.responseJSON.error);
+                    } else {
+                        // Handle other failure conditions
+                        $('#registerMessage').html('Login failed ');
+                    }
+                    });
+                });
+            });
+            
+        </script>
+        
+</div>
+</body>
+</html>

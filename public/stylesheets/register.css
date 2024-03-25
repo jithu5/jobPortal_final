@@ -1,0 +1,189 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;
+}
+body {
+min-height: 100vh;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+padding: 20px;
+background: #66B2B2
+}
+.jobscorner{
+    color: #C53678;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4vw;
+    font-weight: 900;
+    padding:0 2vw;
+    text-align: center;
+}
+span{
+    color:#FF5841;
+    font-family: cursive;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    justify-content:baseline;
+    gap: 1vw;
+}
+.links a{
+    text-decoration: none;
+    color: white;
+    font-size: 1vw;
+    text-align: center;
+    padding-left: 20%;
+}
+
+.container {
+margin-left: 2vw;
+width: 47%;
+height: fit-content;
+background: #fff;
+padding: 25px;
+border-radius: 8px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+font-size: 1.5vw;
+color: #333;
+font-weight: 500;
+text-align: center;
+}
+.container .form {
+margin-top: 2vw;
+}
+.form .input-box {
+width: 100%;
+margin-top: 2vw;
+}
+.input-box label {
+color: #333;
+}
+.regm{
+    margin-left: 100px;
+    color: #fff;
+}
+.form :where(.input-box input, .select-box) {
+position: relative;
+height: 2vw;
+width: 100%;
+outline: none;
+font-size: 1rem;
+color: #707070;
+margin-top: .5vw;
+border: 1px solid #ddd;
+border-radius: 6px;
+padding: 0 15px;
+}
+.input-box input:focus {
+box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+display: flex;
+column-gap: 5vw;
+}
+.form .gender-box {
+margin-top: 20px;
+}
+.gender-box h3 {
+color: #333;
+font-size: 1rem;
+font-weight: 400;
+margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+display: flex;
+align-items: center;
+column-gap: 50px;
+flex-wrap: wrap;
+}
+.form .gender {
+column-gap: 5px;
+}
+.gender input {
+accent-color: #66B2B2
+}
+.form :where(.gender input, .gender label) {
+cursor: pointer;
+}
+.gender label {
+color: #707070;
+}
+.address :where(input, .select-box) {
+margin-top: 15px;
+}
+.select-box select {
+height: 100%;
+width: 100%;
+outline: none;
+border: none;
+color: #707070;
+font-size: 1rem;
+}
+.form button {
+height: 3vw;
+width: 100%;
+color: #fff;
+font-size: 1rem;
+font-weight: 400;
+margin-top: 30px;
+border: none;
+cursor: pointer;
+transition: all 0.2s ease;
+background: #66B2B2
+}
+.form button:hover {
+background: #226262
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+.form .column {
+    flex-wrap: wrap;
+}
+.form :where(.gender-option, .gender) {
+    row-gap: 15px;
+}
+}
+@media (max-width: 1200px) {
+    body{
+        flex-direction: column;
+
+    }
+    .container {
+        margin-left: 2vw;
+        width: 75%;
+        height: fit-content;
+        background: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    
+}
+@media (max-width:550px) {
+    .container {
+        margin-left: 2vw;
+        width: 90%;
+        height: fit-content;
+        background: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    
+}
+.head-ing{
+    position: absolute;
+top: 0;
+left: 50%; /* This centers the heading horizontally */
+transform: translateX(-50%); /* This centers the heading horizontally */
+margin: 0;
+}

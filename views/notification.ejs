@@ -1,0 +1,28 @@
+<!DOCTYPE html><head>
+    <link rel="stylesheet" href="/stylesheets/notifications.css">
+</head>
+<body>
+    <section class="section-50">
+        <div class="container">
+            <h3 class="m-b-50 heading-line">Notifications <i class="fa fa-bell text-muted"></i></h3>
+            <% if (notifications.length === 0) { %>
+                <h4 style="text-align: center;">No new notifications</h4>
+            <% } else { %>
+            <% for (const notes of notifications) { %>
+            <div class="notification-ui_dd-content">
+                <div class="notification-list notification-list--unread">
+                    <div class="notification-list_content">
+                        <div class="notification-list_img">
+                            <img src='/images/man.png' alt="user">
+                        </div>
+                        <div class="notification-list_detail">
+                            <p class="text-muted"><%= notes.notification %></p>
+                            <p class="text-muted"><small><%= notes.date %> <%= notes.time %></small></p>
+                        </div>
+                    </div>
+                    
+        </div>
+        <% } %>
+        <% } %>
+    </section>
+</body>

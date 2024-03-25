@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applied Job Details</title>
+  <link rel="stylesheet" href="/stylesheets/seekerJob.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <a href="/profile"><img class="backbutton" src="/images/back.png"  width="30" height="30"></a>
+  <div class="job-posting-container">
+    <h1>Applied Job Details</h1>
+    <% if (appliedJob.length === 0) { %>
+      <h4 style="text-align: center;">You haven't applied for any jobs</h4>
+  <% } else { %>
+    <% appliedJob.forEach(job => { %>  
+    
+    <div class="jobHistory">
+      <div class="job">
+        <h2 class="agency-name">POSTED BY:<%= job.user_name %></h2>
+        <h2 class="agency-name"><%= job.job %></h2>
+        <p class="description"><%= job.category %></p>
+        <p class="description"><%= job.description %></p>
+        <p class="wages"><%= job.wage %></p>
+        <p class="max-workers"><%= job.workers %></p>
+        <p class="time"><%= job.start_time %>,<%= job.end_time %></p>
+        <p class="max-workers"><%= job.phone %>,
+            <%= job.alter_phone %></p>
+        <p class="address"><%= job.building %>,
+            <%= job.street %>,
+            <%= job.city %>,
+            <%= job.landmark %>,
+            <%= job.district %>,
+            <%= job.pin %></p>
+        
+       <form action="/cancel" method="post">
+        <input type="hidden" name="jobid" value="<%= job.job_id %>">
+        <button type="submit" class="cancel-button">Cancel</button></form>
+      </div>
+      <hr>
+    </div>
+    <% }); %>
+    <% } %>
+  </div>
+</body>
+</html>

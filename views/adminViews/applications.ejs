@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/stylesheets/search-1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/admin/dashboard"><img class="backbutton" src="/images/back.png"  width="30" height="30"></a> 
+        <div class="row-container">
+            <h2 class="heading"> APPLICATIONS</h2>
+            <div class="button-group">
+                
+                <button class="toggleButton" data-name="1">SHOW</button>
+                
+            </div>
+            <div class="toggleBtn"><!-- toggle button -->
+                
+            </div>
+        </div>
+        
+        <div class="confirmWait" data-target="1">
+        
+                
+            <div class="confirmTable table-responsive"> <!-- confirm table starts -->
+                <h1></h1>
+                <table class="table table-success table-striped" style="display: block;"  >
+                
+                    <thead>
+                        <tr>
+                        <th style="width: 5%;" scope="col">SERIAL NO</th>
+                        <th style="width: 18%;"scope="col">JOB ID</th>
+                        <th style="width: 18%;"scope="col">JOB</th>
+                        <th style="width: 18%;"scope="col">CATEGORY</th>
+                        <th style="width: 14%;"scope="col">USER NAME</th>
+                        <th style="width: 18%;"scope="col">NAME</th>
+                        <th style="width: 18%;"scope="col">EMAIL</th>
+                        <th style="width: 20%;"scope="col">PHONE</th>
+                        <th style="width: 10%;"scope="col">STATUS</th>
+                        <th style="width: 10%;"scope="col">DELETE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% application.forEach((users,index) => { %>
+                            <tr>
+                            <th scope="row"><%= index + 1 %></th>
+                            <td><%= users.job_id %></td>
+                            <td><%= users.job %></td>
+                            <td><%= users.category %></td>
+                            <td><%= users.user_name %></td>
+                            <td><%= users.first_name %></td>
+                            <td><%= users.email %></td>
+                            <td><%= users.phone %></td>
+                            <td><%= users.status%></td>
+                            <td><form class="delbtn" action="/admin/delete-applic" method="post">
+                                <input type="hidden" name="username" value="<%= users.user_name %>">
+                                <button type="delete"><img src="/images/rubbish.png"></button>
+                            </form></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                    </div>
+    <script src="/javascripts/se.js"></script>
+</body>
+</html>

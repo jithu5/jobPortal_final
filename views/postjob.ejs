@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME PAGE</title>
+    <!--remix icon link-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!--bts-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+
+
+    <link rel="stylesheet" href="/stylesheets/post.css">
+
+    <script src="/javascripts/post.js" defer></script>
+</head>
+    <div class="body_color">
+      <a href="/"><img class="backbutton" src="/images/home.jpeg"  width="30" height="30"></a> 
+        <div class="main2">
+            <div class="nav">
+            <h1 id="jo" class="jobscorner">JOBS<span>CORNER</span></h1>
+          
+            </div>
+        </div>
+    </div>
+    <div id="customPrompt" class="custom-prompt">
+      <div class="prompt-content">
+          <p id="promptMessage"></p>
+          <button id="promptOK">OK</button>
+      </div>
+  </div>
+  
+<div class="form">
+        <fieldset>
+            <legend>POST A JOB</legend>
+            <div class="postmsg" id="postMessage"></div>
+            <div class="row g-2 ">
+                <form id="postform" class="row g-3 " action="/postjob/postjob" method="post">
+                <div class="row">
+                <label class="form-label" >JOB</label>
+                <input name="job" id="job" class="form-control" type="text" placeholder="ENTER THE JOB" required>
+                </div>
+              
+                <label for="JobDataList " class="form-label">CATEGORIES</label>
+                    <input name="cate" id="cate" class="form-control" list="jobOptions" id="jobDataList" placeholder="Type to search..." required>
+                    <datalist id="jobOptions">
+                      <option value="CATERING">
+                      <option value="CLEANING">
+                      <option value="CONSTRUCTION">
+                      <option value="ELECTRIC AND PLUMBING"></option>
+                      <option value="EVENT MANAGEMENT"></option>
+                      <option value="HOUSEHOLD">
+                      <option value="TRANSPORTATION AND DELIVERY">                     
+                      <option value="OTHERS">
+                    </datalist>
+              
+                    <div class="row g-2 ">
+                      <label class="form-label">DESCRIPTION</label>
+                      <input name="desc" id="desc" class="form-control" type="textarea" placeholder="description" required></div>
+
+                <div class="row g-2 ">
+                    <label class="form-label">DATE</label>
+                    <input name="datee" id="datee" class="form-control" type="date" placeholder="SELECT A DATE" required></div>
+                    
+                    <div class="row g-2 ">
+                    <label class="form-label">START TIME</label>
+                    <input name="stime" id="stime" class="form-control" type="time" placeholder="" required></div>
+                    
+                    <div class="row g-2 ">
+                    <label class="form-label">END TIME</label>
+                    <input name="etime" id="etime" class="form-control" type="time" required></div>
+
+                    <div class="row g-2 ">
+                      <label class="form-label">WAGE</label>
+                      <input name="wage" id="wage" class="form-control" type="text" required></div>
+                    
+                    <div class="row g-2 ">
+                    <label class="form-label">PHONE NUMBER</label>
+                    <input name="ph1" id="ph1" class="form-control" type="tel" minlength="9" maxlength="10" required ></div>
+                    
+                    <div class="row g-2 ">
+                    <label class="form-label">ALTERNATIVE PHONE NUMBER</label>
+                    <input name="ph2" id="ph2" class="form-control" type="tel" minlength="9" maxlength="10" required></div>
+                    
+                    <label class="form-label">NO OF WORKERS NEEDED</label>
+                    <input name="wno" id="wno" class="form-control" type="number" required>
+                    
+                    <label for="exampleDataList " class="form-label">DISTRICT</label>
+                    <input name="distri" id="distri" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." required>
+                    <datalist id="datalistOptions">
+                      <option value="TRIVANDRUM">
+                      <option value="KOLLAM">
+                      <option value="PATHANAMTHITTA">
+                      <option value="ALAPPUZHA">
+                      <option value="KOTTAYAM">
+                      <option value="IDUKI">
+                      <option value="ERNAKULAM">
+                      <option value="THRISSUR">
+                      <option value="PALAKKAD">
+                      <option value="MALAPPURAM">
+                      <option value="KOZHIKODE">
+                      <option value="WAYANAD">
+                      <option value="KANNUR">
+                      <option value="KASARGOD">
+                    
+                    </datalist>
+
+                    
+                <div class="row">
+                    <label class="form-label">CITY</label>
+                    <input name="city" id="city" class="form-control" type="text" required>
+                </div>
+                <div class="row g-2 ">
+                  <label class="form-label">STREET NAME</label>
+                  <input name="street" id="street" class="form-control" type="text" required>
+                </div>
+                <div class="row g-2 ">
+                  <label class="form-label">BUILDING NO/NAME</label>
+                  <input name="building" id="building" class="form-control" type="text" required>
+                </div>
+
+                <div class="row g-2 ">
+                  <label class="form-label">LANDMARK</label>
+                  <input name="landmark" id="landmark" class="form-control" type="text" required>
+                </div>
+                <div class="row g-2 ">
+                  <label class="form-label">PIN</label>
+                  <input name="pin" id="pin" class="form-control" type="tel"  minlength="6" maxlength="6" required></div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">POST</button>
+                </div>
+              </form>
+        </fieldset>
+
+</div>
+
+
+</body>
+</html>

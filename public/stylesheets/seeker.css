@@ -1,0 +1,118 @@
+.row-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    height:fit-content;
+    margin-top: 10px;
+  }
+  .heading {
+    margin: 0;
+    flex-grow: 1;
+  }
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+  }
+  @media (max-width:650px) {
+    .button-group{
+      flex-direction: column;
+      gap: 1.5vw;
+    }
+    
+  }
+  .edit-button, .delete-button {
+    margin-left: 10px;
+    padding: .2vw .5vw;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  .toggleButton{
+    margin-left: 15px;
+    padding: .2vw .5vw;
+    border: none;
+    border-radius: 5px;
+    font-size: .8rem;
+    font-weight: 700;
+    background-color: #2232c1;
+    color: white;
+    cursor: pointer;
+}
+  .edit-button:hover, .delete-button:hover{
+    background-color: #45a049;
+  }
+  .toggleButton:hover{
+    background-color: #091479;
+  }
+  .edit-button:focus, .delete-button:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+  }
+  .toggleButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(73, 42, 226, 0.5);
+  }
+  table{
+    width:45dvw;
+    margin-left: 15px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    table-layout: auto;
+  }
+  .waitingTable h2{
+    text-align: center;
+  }
+  .confirmTable h2{
+    text-align: center;
+  }
+  th{
+    border: 1px solid black;
+  }
+  td{
+    border: 1px solid black;
+    word-wrap: break-word;
+  }
+  .confirmWait{
+    height: fit-content;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    display: flex; 
+  }
+  .del{
+    height: 2rem;
+  }
+  .confirm{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  @media (max-width:1000px) {
+    .confirmWait{
+      display: flex;
+      flex-direction: column;
+    }
+    .confirmTable{
+      left: 10px;
+      height:fit-content;
+      width: 100%;
+    }
+    .waitingTable{
+      left: 10px;
+      height:fit-content;
+      width: 100%;
+    }
+    table{
+      width:95dvw;
+    }
+    
+  }

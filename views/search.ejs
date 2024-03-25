@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="/stylesheets/search.css"> 
+<link rel="stylesheet" href="/stylesheets/index.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="/javascripts/searchpage.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <a href="/"><img class="backbutton" src="/images/back.png"  width="30" height="30"></a> 
+<div class="search_btn" style="margin-top: 0px;">
+    <div class="search_filter_btn">
+        
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">FILTER</button>
+        <a href="/search"><button class="btn btn-primary" id="clear" type="submit"> CLEAR FILTER</button></a> 
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+    <div class="offcanvas-header ">
+        <!--  <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+        <button type="button" class="btn-close" data-bs-dismiss offcanvas" aria-label="Close"></button>-->
+        <div class="filter_dist_cat">
+            <form class="d-flex" action="/search/selectCat" method="post">
+            <div class="filter_dist">
+                <label for="exampleDataList " class="form-label">DISTRICT</label>
+                <input  name="district" class="form-control" list="datalistOptions" id="exampleDataList"  placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                <option value="TRIVANDRUM">
+                <option value="KOLLAM">
+                <option value="PATHANAMTHITTA">
+                <option value="ALAPPUZHA">
+                <option value="KOTTAYAM">
+                <option value="IDUKI">
+                <option value="ERNAKULAM">
+                <option value="THRISSUR">
+                <option value="PALAKKAD">
+                <option value="MALAPPURAM">
+                <option value="KOZHIKODE">
+                <option value="WAYANAD">
+                <option value="KANNUR">
+                <option value="KAZARKODE">
+            </div> 
+                </datalist>
+            
+            
+            
+
+            <div class="cate_fil" style="padding-left: 0.5vw;">
+                <div class="col-auto">
+                    <label class="form-label" for="autoSizingSelect">SELECT CATEGORY</label>
+                    <select name="category" class="form-select" id="autoSizingSelect">
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="CATERING">CATERING</option>
+                        <option value="CONSTRUCTION">CONSTRUCTION</option>
+                        <option value="CLEANING">CLEANING</option>
+                        <option value="ELECTRIC AND PLUMBING">ELECTRIC AND PLUMBING</option>
+                        <option value="EVENT MANAGEMENT">EVENT MANAGEMENT</option>
+                        <option value="HOUSEHOLD">HOUSEHOLD</option>
+                        <option value="TRANSPORTATION AND DELIVERY">TRANSPORTATION AND DELIVERY</option>                    
+                        <option value="OTHERS">OTHERS</option>
+                    </select>
+                </div>
+            </div>  
+
+                <div class="col-auto" style="padding-left: 0.5vw;">
+                    
+                    <label class="form-label" for="autoSizingSelect">WAGES</label>
+                    <select name="wage" class="form-select" id="autoSizingSelect">
+                        <option value="" disabled selected>Select Wage</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>                    
+                        <option value="900">800+</option>
+                    </select>
+                </div>
+                    <button class="btn" id="srchbtn" type="submit" style="padding-left: 0.5vw;">FILTER</button>
+                    
+                    </form>
+                   
+                </div>
+            </div>
+        </div>
+    </div> 
+        
+    
+
+
+    <form action="/search/searchjobs" method="post" class="d-flex" role="search">
+        <input name="searchFactor" class="form-control me-2" id="search-btt" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
+</form>
+
+</div>
+
+
+
+<!--jobsection-->
+
+<section class="job-section">
+    <div class="title_jobs">
+        <h2 class="title">JOBS</h2>
+    </div>
+    <div class="applyConfirm" id="conApp">
+        <img src="/images/apply.png" alt="hello">
+        <p id="applictionmsg">HI
+        </p>
+    
+    </div>
+    <div class="products-container">
+        <% userJobs.forEach(joblist => { %>
+        <div class="product" data-name="<%= joblist.job_id %>">
+            <img src="/images/agency.jpg" class="agens">
+            <h3 class="jobl"><%= joblist.job %></h3>
+            <div class="short">
+            <p>Wage : <%= joblist.wage %></p>
+            <p>Location : <%= joblist.city %></p>
+            <% if (joblist.alreadyApplied) { %>
+                <p>You have already applied for this job</p>
+            <% } else { %>
+                <p></p>
+            <% } %>
+            </div>
+        </div>
+        <% }); %>                  
+    </div>       
+    </div>
+    <div class="job-preview">
+        <% userJobs.forEach(joblist => { %>
+        <div class="preview " id="prev" data-target="<%= joblist.job_id %>">
+            <i class="fas fa-times"></i>
+            <form id="applyform" >
+                
+            <h3 class="job_head"><%= joblist.job %></h3>
+            
+            <h4> Category : <%= joblist.category %></h4>
+            
+            <p>
+            <%= joblist.description %>
+            </p>
+            <p>
+            No of Workers :  <%= joblist.workers %>
+            </p>
+            <p>
+            Wage : <%= joblist.wage %>  
+            </p>
+            <p>Time : <%= joblist.start_time %> to <%= joblist.end_time %></p>
+            <p>
+                Location : <%= joblist.building %>
+                        <%= joblist.street %>
+                        <%= joblist.city %>1
+                        <%= joblist.landmark %>
+                        <%= joblist.pin %>
+                        <%= joblist.district %>
+            </p>
+            <input type="hidden" name="jobId" value="<%= joblist.job_id %>">
+            <input type="hidden" name="jobName" value="<%= joblist.job %>">
+            <input type="hidden" name="jobCat" value="<%= joblist.category %>">
+            <input type="hidden" name="Workers" value="<%= joblist.workers %>">
+            <input type="hidden" name="Wage" value="<%= joblist.wage %>">
+            <input type="hidden" name="start_time" value="<%= joblist.start_time %>">
+            <input type="hidden" name="end_time" value="<%= joblist.end_time %>">
+                <button type="button" id="applybtn" class="apply-job">APPLY</button>
+    
+            </form>
+    
+            
+        </div>
+        <% }); %>
+    
+    </div>
+    <div id="customPrompt" class="custom-prompt">
+        <div class="prompt-content">
+            <p id="promptMessage"></p>
+            <button id="promptOK">OK</button>
+        </div>
+    </section>
+    
+    
+    
+    
+    </div>
+    </section>
+    
+
+</body>
+</html>
